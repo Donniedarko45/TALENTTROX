@@ -81,16 +81,16 @@
 
 /* Styling for content inside the details panel */
 .card-details-area h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #111827;
+  font-size: 24px;
+  font-weight: 400;
+  color: rgba(14, 14, 14, 1);
   margin: 0 0 12px 0;
   white-space: nowrap;
 }
 
 .card-details-area p {
   font-size: 0.9rem;
-  color: #4b5563;
+  color: rgba(14, 14, 14, 1);
   line-height: 1.6;
   margin: 0 0 20px 0;
   height: 4.8em;
@@ -100,9 +100,10 @@
 .company-info {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 0.9rem;
-  color: #374151;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(14, 14, 14, 1);
 }
 
 .company-logos {
@@ -112,14 +113,15 @@
 }
 
 .company-logos img {
-  height: 20px;
+  height: 18px;
   width: auto;
   object-fit: contain;
 }
 
 .more-text {
-  font-size: 0.8rem;
-  color: #6b7280;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(105, 105, 105, 1);
 }
 
 
