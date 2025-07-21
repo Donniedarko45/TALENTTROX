@@ -1,8 +1,8 @@
 /* Main container for the "Every Field" section */
 .every-field-section {
   padding: 80px 5%;
-  background-color: #f8f9fa; /* Slightly off-white background like the image */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  
   text-align: center;
 }
 
@@ -10,135 +10,145 @@
   font-size: 2.8rem;
   font-weight: 700;
   color: #152147;
-  margin-bottom: 60px; /* Increased margin for better spacing */
+  margin-bottom: 60px;
 }
 
-/* This is the main container for the columns */
+/* Grid layout for columns */
 .fields-grid {
   display: flex;
-  justify-content: center; /* Center the columns horizontally */
-  align-items: center;    /* Vertically align the columns to the center */
-  gap: 50px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
   max-width: 1300px;
   margin: 0 auto;
 }
 
-/* This is for each of the three columns */
 .fields-column {
   display: flex;
-  flex-direction: column; /* Stack the cards vertically */
-  gap: 60px; /* Increased vertical space between cards in a single column */
-  width: 30%; /* Assign a width to the columns */
+  flex-direction: column;
+  gap: 30px;
+  width: 30%;
 }
+
+/* --- CARD STYLING FOR REVEAL EFFECT --- */
 
 /* Individual field card */
 .field-card {
-  background-color: #f1f3f5; /* Darker background for better contrast */
-  border-radius: 8px; /* Less rounded initially */
-  padding: 25px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Increased shadow for more prominence */
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease, border-radius 0.3s ease;
-  border: 1px solid #d1d9e6; /* Darker border for better definition */
-  position: relative;
-  overflow: visible;
-}
-
-/* Layer that scrolls out from card */
-.field-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #f1f3f5; /* Same darker background as original card */
-  border-radius: inherit;
-  border-top: none; /* Remove/hide top border for seamless flow */
-  border-bottom: 2px solid #9ca3af; /* Stronger bottom border for clear visibility */
-  border-left: 2px solid #9ca3af; /* Stronger left border for clear visibility */
-  border-right: 2px solid #9ca3af; /* Stronger right border for clear visibility */
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Stronger shadow for depth */
-  transform: translateY(75px);
-  opacity: 0;
-  pointer-events: none;
-  z-index: 1;
-  animation: scrollBackUp 0.4s ease-in forwards;
-}
-
-/* Animation: Scroll out on hover */
-.field-card:hover::before {
-  animation: scrollOut 0.6s ease-out forwards;
-}
-
-/* Scroll down animation */
-@keyframes scrollOut {
-  0% {
-    transform: translateY(0);
-    opacity: 0.3;
-  }
-  50% {
-    transform: translateY(50px);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translateY(75px);
-    opacity: 0;
-  }
-}
-
-/* Scroll back up animation when cursor leaves */
-@keyframes scrollBackUp {
-  0% {
-    transform: translateY(75px);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(50px);
-    opacity: 0.2;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 0;
-  }
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: #ffffff;
+  overflow: hidden; /* Crucial for the max-height animation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .field-card:hover {
-  transform: none;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
-  border: 2px solid #6b7280; /* Lighter gray-blue border */
-  border-radius: 20px; /* More rounded on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.field-card img {
-  width: 100%;
-  height: auto;
-  display: block;
-  background-color: #e9eaf2; /* Placeholder background for the image area */
-  border-radius: 8px; /* Rounded corners for the image itself */
-  position: relative;
-  z-index: 2; /* Above the animation overlay */
+/* The top area with the icon, always visible */
+.card-image-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background-color: #e9eaf2;
 }
 
-/* Responsive adjustments */
+
+
+/* The bottom details panel that is revealed */
+.card-details-area {
+  padding: 0 24px; /* Collapse padding initially */
+  box-sizing: border-box;
+  text-align: left;
+  
+  /* Initial state: collapsed and invisible */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out, opacity 0.2s ease-in-out 0.2s;
+}
+
+/* Hover state: expand the panel to reveal content */
+.field-card:hover .card-details-area {
+  padding: 24px; /* Add padding back on hover */
+  max-height: 300px; /* Set a height large enough for the content */
+  opacity: 1;
+}
+
+/* Styling for content inside the details panel */
+.card-details-area h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px 0;
+  white-space: nowrap;
+}
+
+.card-details-area p {
+  font-size: 0.9rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  height: 4.8em;
+  overflow: hidden;
+}
+
+.company-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.company-logos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.company-logos img {
+  height: 20px;
+  width: auto;
+  object-fit: contain;
+}
+
+.more-text {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+
+/* --- Responsive adjustments --- */
+@media (max-width: 992px) {
+  .fields-grid {
+    gap: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .every-field-section h2 {
     font-size: 2.2rem;
   }
-  
-  /* On smaller screens, stack the columns vertically */
   .fields-grid {
     flex-direction: column;
     align-items: center;
   }
-
   .fields-column {
-    width: 80%; /* Give columns more width when stacked */
-    max-width: 400px;
+    width: 80%;
+    max-width: 450px;
   }
 }
 
 @media (max-width: 576px) {
   .fields-column {
-    width: 100%; /* Full width on mobile */
+    width: 100%;
+  }
+  .card-details-area h3 {
+    font-size: 1.3rem;
   }
 }
