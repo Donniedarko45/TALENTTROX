@@ -1,0 +1,87 @@
+/*
+  Define theme colors and properties in :root.
+  These can be placed in this file or a global CSS file.
+*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+}
+:root {
+  --primary-color: #6a5af9;
+  --secondary-color: #9b8bff;
+  --text-color: #ffffff;
+  --shadow-color: rgba(106, 90, 249, 0.3);
+  --hover-bg: rgba(255, 255, 255, 0.15);
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- Main Navbar Container --- */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: linear-gradient(100deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-color);
+  box-shadow: 0 10px 30px var(--shadow-color);
+  font-family: var(--font-family); /* Font family applied directly */
+}
+
+/* --- Logo Section --- */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 55px;
+  width: 120px;
+  display: block;
+}
+
+/* --- "Get in Touch" Button --- */
+.navbar-cta-button {
+  background-color: transparent;
+  color: var(--text-color);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid transparent;
+}
+
+/* Rotate arrow by 45 degrees up */
+.navbar-cta-button svg {
+  transform: rotate(-45deg);
+}
+
+/* Simple hover effect - only text and arrow color change */
+.navbar-cta-button:hover,
+.navbar-cta-button:focus-visible {
+  color: #000000; /* Change text and arrow color to black */
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 576px) {
+  .navbar-container {
+   
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .logo {
+    height: 40px;
+  }
+  
+  .navbar-cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

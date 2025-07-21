@@ -1,0 +1,128 @@
+/* Book a Call Button - Pure CSS Version */
+.book-call-btn-pure {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 32px;
+  background-color: #0F1C4D; /* Dark blue background */
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px; /* Pill-shaped (fully rounded) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: box-shadow 0.3s ease-out;
+  /* Prevent text shift during animation */
+  min-width: 180px;
+  text-align: center;
+}
+
+/* Hover shadow effect */
+.book-call-btn-pure:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Focus styles */
+.book-call-btn-pure:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(110, 75, 255, 0.3);
+}
+
+/* Instantly change background to solid purple when leaving */
+.book-call-btn-pure.leaving {
+  background-color: #A066FF; /* Solid purple background */
+  transition: box-shadow 0.3s ease-out;
+}
+
+/* Gradient overlay for hover in animation (left to right) */
+.gradient-overlay-pure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #6E4BFF 0%, #A066FF 100%);
+  transform: translateX(-100%); /* Start off-screen to the left */
+  transition: transform 0.4s ease;
+  z-index: 10;
+}
+
+/* On hover: gradient slides in from left to right */
+.gradient-overlay-pure.slide-in {
+  transform: translateX(0%); /* Slide in to cover the button */
+}
+
+/* Dark blue overlay for slide out (right to left to reveal default button) */
+.dark-overlay-pure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0F1C4D; /* Dark blue - same as default button */
+  transform: translateX(100%); /* Start off-screen to the right */
+  animation: slideRightToLeft 0.4s ease 0.05s forwards;
+  z-index: 15; /* Above purple background, below text */
+}
+
+/* Button content - always on top */
+.btn-content-pure {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  /* Prevent content from moving during animation */
+  width: 100%;
+  justify-content: center;
+  transition: color 0.1s ease-out;
+}
+
+.btn-content-pure svg {
+  font-size: 14px;
+}
+
+/* Text and arrow become invisible but stay white during leaving transition */
+.book-call-btn-pure.leaving .btn-content-pure {
+  color: white; /* Keep text white */
+  animation: textVisibilityTransition 0.45s ease-out forwards;
+}
+
+/* Animation to control text visibility during the slide transition */
+@keyframes textVisibilityTransition {
+  0% { opacity: 0; } /* Invisible at start */
+  20% { opacity: 0; } /* Start becoming visible earlier */
+  100% { opacity: 1; } /* Fully visible as transition completes */
+}
+
+/* Keyframe animations */
+@keyframes slideRightToLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .book-call-btn-pure {
+    padding: 14px 28px;
+    font-size: 0.9rem;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-call-btn-pure {
+    padding: 12px 24px;
+    font-size: 0.85rem;
+    min-width: 140px;
+  }
+}

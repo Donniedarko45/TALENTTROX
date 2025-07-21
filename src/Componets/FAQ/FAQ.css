@@ -1,0 +1,85 @@
+/* Main container for the FAQ section */
+.faq-container {
+  max-width: 1300px;
+  margin: 60px auto;
+  padding: 40px 20px;
+  
+  
+  border-radius: 12px;
+}
+
+.faq-container h2 {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #152147; /* Dark blue from previous components */
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+/* List containing all FAQ items */
+.faq-list {
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Individual FAQ item */
+.faq-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* The clickable question part */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.faq-question:hover {
+  background-color: #f1f3f5;
+}
+
+/* The plus/minus icon */
+.faq-icon {
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #152147;
+}
+
+/* The answer part, hidden by default */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Style for the answer when it's open */
+.faq-answer.open {
+  max-height: 1000px; /* Large enough to fit any content */
+  transition: max-height 0.3s ease-in, padding 0.3s ease;
+  padding: 0 15px 20px 15px;
+}
+
+.faq-answer p {
+  margin: 0;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .faq-container h2 {
+    font-size: 2.2rem;
+  }
+  .faq-question {
+    font-size: 1rem;
+  }
+  .faq-answer {
+    font-size: 0.95rem;
+  }
+}

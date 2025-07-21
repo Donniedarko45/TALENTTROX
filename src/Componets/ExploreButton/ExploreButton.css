@@ -1,0 +1,128 @@
+/* Explore Button - Pure CSS Version */
+.explore-btn-pure {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 32px;
+  background-color: #fff; /* White background - default secondary style */
+  color: #3b4b8a; /* Blue text - default secondary style */
+  border: none; /* No border */
+  font-weight: 600;
+  border-radius: 50px; /* Pill-shaped (fully rounded) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: inherit;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-out;
+  /* Prevent text shift during animation */
+  min-width: 140px;
+  text-align: center;
+}
+
+/* Hover shadow effect */
+.explore-btn-pure:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Focus styles */
+.explore-btn-pure:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(110, 75, 255, 0.3);
+}
+
+/* Instantly change background to solid purple when leaving */
+.explore-btn-pure.leaving {
+  background-color: #A066FF; /* Solid purple background */
+  border: none; /* No border */
+  transition: box-shadow 0.3s ease-out;
+}
+
+/* Gradient overlay for hover in animation (left to right) */
+.gradient-overlay-explore {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #6E4BFF 0%, #A066FF 100%);
+  transform: translateX(-100%); /* Start off-screen to the left */
+  transition: transform 0.4s linear;
+  z-index: 10;
+}
+
+/* On hover: gradient slides in from left to right */
+.gradient-overlay-explore.slide-in {
+  transform: translateX(0%); /* Slide in to cover the button */
+}
+
+/* White overlay for slide out (right to left to reveal default button) */
+.white-overlay-explore {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff; /* White - same as default button */
+  border: none; /* No border for straight sliding */
+  border-radius: 0; /* No border radius for straight rectangle */
+  transform: translateX(100%); /* Start off-screen to the right */
+  animation: slideRightToLeftExplore 0.4s linear 0.05s forwards;
+  z-index: 15; /* Above purple background, below text */
+}
+
+/* Button content - always on top */
+.btn-content-explore {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3b4b8a; /* Blue text - default secondary style */
+  /* Prevent content from moving during animation */
+  width: 100%;
+  justify-content: center;
+  transition: color 0.1s ease-out;
+}
+
+/* Text becomes invisible but stays blue during leaving transition */
+.explore-btn-pure.leaving .btn-content-explore {
+  color: #3b4b8a; /* Keep text blue */
+  animation: textVisibilityTransitionExplore 0.45s ease-out forwards;
+}
+
+/* Animation to control text visibility during the slide transition */
+@keyframes textVisibilityTransitionExplore {
+  0% { opacity: 0; } /* Invisible at start */
+  20% { opacity: 0; } /* Start becoming visible earlier */
+  100% { opacity: 1; } /* Fully visible as transition completes */
+}
+
+/* Keyframe animations for right to left slide */
+@keyframes slideRightToLeftExplore {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .explore-btn-pure {
+    padding: 14px 28px;
+    font-size: 0.9rem;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .explore-btn-pure {
+    padding: 12px 24px;
+    font-size: 0.85rem;
+    min-width: 100px;
+  }
+}

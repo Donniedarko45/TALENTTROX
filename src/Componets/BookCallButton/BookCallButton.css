@@ -1,0 +1,112 @@
+/* Book a Call Button Styles */
+.book-call-btn {
+  position: relative;
+  overflow: hidden;
+  padding: 15px 32px;
+  background-color: #1e3a8a; /* Dark blue background */
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px; /* Pill-shaped */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: box-shadow 0.3s ease-out, background-color 0s ease-out;
+  font-family: inherit;
+}
+
+/* Immediately change background to solid purple when leaving */
+.book-call-btn.leaving {
+  background-color: #A066FF; /* Solid purple background */
+  transition: box-shadow 0.3s ease-out, background-color 0s ease-out;
+}
+
+.book-call-btn:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.book-call-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* Gradient overlay for hover in (left to right) */
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #6E4BFF 0%, #A066FF 100%);
+  transform: translateX(-100%); /* Start off-screen to the left */
+  transition: transform 0.5s ease-out;
+  z-index: 1;
+}
+
+/* On hover: gradient slides in from left to right */
+.gradient-overlay.slide-in {
+  transform: translateX(0%); /* Slide in to cover the button */
+}
+
+/* Dark blue overlay that slides over the purple background (right to left) */
+.dark-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1e3a8a; /* Dark blue to cover purple */
+  transform: translateX(100%); /* Start off-screen to the right */
+  transition: transform 0.5s ease-out 0.1s; /* Small delay */
+  z-index: 1;
+}
+
+/* On mouse leave: dark overlay slides in from right to left to cover purple */
+.book-call-btn.leaving .dark-overlay {
+  transform: translateX(0%); /* Slide in from right to cover the purple */
+}
+
+/* Button content */
+.btn-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+}
+
+/* Text and arrow visibility - visible by default */
+.btn-content span,
+.arrow-icon {
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+}
+
+.arrow-icon {
+  font-size: 0.875rem;
+}
+
+/* Keep text and arrow visible during hover */
+.book-call-btn:hover .btn-content span,
+.book-call-btn:hover .arrow-icon {
+  opacity: 1;
+}
+
+/* Only make text and arrow invisible when cursor leaves (during slide-out animation) */
+.book-call-btn.leaving .btn-content span,
+.book-call-btn.leaving .arrow-icon {
+  opacity: 0;
+  transition: opacity 0.3s ease-out 0.1s; /* Small delay to start fade during slide-out */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .book-call-btn {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+  }
+}

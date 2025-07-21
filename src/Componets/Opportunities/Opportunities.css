@@ -1,0 +1,85 @@
+/* --- Styles for Opportunities Section --- */
+
+/* Main container for the opportunities section */
+.opportunities-section {
+  padding: 80px 5%;
+ 
+  text-align: center;
+}
+
+/* Header containing the title and subtitle */
+.opportunities-header {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+.opportunities-header h2 {
+  font-size: 2.8rem;
+  color: #152147;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.opportunities-header p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Grid for the opportunity cards */
+.opportunities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- Styles for Opportunity Card --- */
+
+/* Styling for a single opportunity card */
+.opportunity-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e9ecef;
+}
+
+/* Container for the icon */
+.icon-container {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px auto;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 2.5rem;
+}
+
+.opportunity-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #212529;
+  margin-bottom: 10px;
+}
+
+.opportunity-card p {
+  font-size: 1rem;
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .opportunities-header h2 {
+    font-size: 2.2rem;
+  }
+  .opportunities-grid {
+    grid-template-columns: 1fr;
+  }
+}

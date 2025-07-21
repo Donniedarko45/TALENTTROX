@@ -1,0 +1,206 @@
+/* --- Styles for Trust Section --- */
+
+/* Main container for the "Built on Trust" section */
+.trust-section {
+  padding: 80px 0; /* Adjusted padding */
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.trust-title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #152147;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+/* Container to manage the horizontal scroll */
+.testimonials-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Add space between the two scrolling rows */
+}
+
+/* The actual scrolling element - infinite auto-scroll */
+.testimonials-scroller {
+  display: flex;
+  gap: 30px;
+  padding: 20px 0;
+  width: max-content;
+}
+
+/* Both rows scroll right-to-left at the same speed */
+.testimonials-scroller:first-child {
+  animation: scroll-right-to-left 35s linear infinite;
+}
+
+.testimonials-scroller:last-child {
+  animation: scroll-right-to-left-offset 35s linear infinite;
+}
+
+/* Keyframe animation for seamless right to left scrolling */
+@keyframes scroll-right-to-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Keyframe animation for left to right scrolling */
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Keyframe animation for second row with offset to center between first row cards */
+@keyframes scroll-right-to-left-offset {
+  0% {
+    transform: translateX(-185px); /* Half of card + gap = 185px */
+  }
+  100% {
+    transform: translateX(calc(-185px - 50%)); /* Combine offset with scroll */
+  }
+}
+
+/* Mobile keyframe animation for second row with offset */
+@keyframes scroll-right-to-left-offset-mobile {
+  0% {
+    transform: translateX(-150px); /* Half of mobile card + gap = 150px */
+  }
+  100% {
+    transform: translateX(calc(-150px - 50%)); /* Combine mobile offset with scroll */
+  }
+}
+
+
+/* --- Styles for Testimonial Card --- */
+
+/* Styling for a single testimonial card */
+.testimonial-card {
+  background-color: #E8E8E8;
+  border-radius: 25px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 340px; /* Prevent shrinking, set a fixed width */
+  width: 340px;
+}
+
+.testimonial-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Header section with image and name/title */
+.card-header {
+  display: flex;
+  align-items: center;
+  
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+}
+
+.profile-info .name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #111;
+  margin: 0;
+}
+
+.profile-info .title {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+/* The testimonial quote */
+.quote {
+  font-size: 1rem;
+  color: #333;
+  
+  white-space: normal; /* Allow text inside the card to wrap */
+}
+
+/* Container for the rating stars */
+.stars-container {
+  display: flex;
+  gap: 5px;
+  font-size: 1.2rem;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .trust-section {
+    padding: 60px 0;
+  }
+  
+  .trust-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .testimonials-container {
+    gap: 30px; /* Reduce gap on mobile */
+  }
+  
+  .testimonials-scroller {
+    gap: 20px; /* Reduce gap between cards */
+    padding: 15px 0;
+  }
+  
+  /* Keep same speed and same direction on mobile */
+  .testimonials-scroller:first-child {
+    animation: scroll-right-to-left 30s linear infinite;
+  }
+  
+  .testimonials-scroller:last-child {
+    animation: scroll-right-to-left-offset-mobile 30s linear infinite;
+  }
+  
+  .testimonial-card {
+    flex: 0 0 280px; /* Smaller fixed width on mobile */
+    width: 280px;
+    padding: 12px;
+  }
+  
+  .profile-image {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .profile-info .name {
+    font-size: 1rem;
+  }
+  
+  .profile-info .title {
+    font-size: 0.8rem;
+  }
+  
+  .quote {
+    font-size: 0.9rem;
+  }
+  
+  .stars-container {
+    font-size: 1rem;
+  }
+}

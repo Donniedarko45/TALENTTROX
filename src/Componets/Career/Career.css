@@ -1,0 +1,96 @@
+/* Main container for the career section */
+.career-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #6a5af9, #d667cd);
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative; /* Needed for positioning the decorative shapes */
+  overflow: hidden; /* Hides parts of shapes that go outside the container */
+}
+
+/* Content wrapper */
+.career-content {
+  max-width: 1300px;
+  z-index: 1; /* Ensures content is above the decorative shapes */
+}
+
+.career-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.career-content .subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* "Start Your Journey" button */
+.cta-button {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 16px 45px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  backdrop-filter: blur(8px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.cta-button:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Small text below the button */
+.subtext {
+  margin-top: 25px;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Styling for the floating decorative shapes */
+.shape {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.07);
+  z-index: 0; /* Places shapes behind the content */
+  animation: float 15s ease-in-out infinite;
+}
+
+.shape-1 { width: 150px; height: 150px; top: 10%; left: 15%; border-radius: 40%; animation-duration: 12s; }
+.shape-2 { width: 50px; height: 50px; top: 70%; left: 10%; border-radius: 10px; animation-duration: 18s; animation-direction: reverse; }
+.shape-3 { width: 80px; height: 80px; top: 20%; right: 15%; border-radius: 50%; animation-duration: 10s; }
+.shape-4 { width: 60px; height: 60px; top: 80%; right: 20%; border-radius: 15px; animation-duration: 20s; animation-direction: reverse; }
+
+/* Animation for the floating effect */
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(45deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .career-content h1 {
+    font-size: 2.5rem;
+  }
+  .career-content .subtitle {
+    font-size: 1rem;
+  }
+  .shape-1, .shape-3 {
+    display: none; /* Hide some shapes on smaller screens to reduce clutter */
+  }
+}

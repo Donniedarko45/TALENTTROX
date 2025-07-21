@@ -1,0 +1,115 @@
+/* General styling for the footer container */
+.footer-container {
+  background-color: #152147;
+  color: #ffffff;
+  padding: 50px 5%;
+  font-family: Arial, sans-serif;
+}
+
+/* Flex container for the main content (logo/description and social links) */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+/* Left section containing the logo and description */
+.footer-left {
+  flex: 2;
+  min-width: 280px;
+}
+
+.footer-logo h2 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.footer-logo p {
+  margin: -5px 0 0 0;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #cccccc;
+}
+
+.footer-description {
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 400px;
+  color: #dddddd;
+}
+
+/* Right section containing the "Follow Us" and social icons */
+.footer-right {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-right h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #a9c1ff;
+  transform: scale(1.1);
+}
+
+/* The horizontal line divider */
+.footer-divider {
+  border: 0;
+  border-top: 1px solid #3a4a7a;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+/* Copyright section at the bottom */
+.footer-copyright {
+  text-align: start;
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: #bbbbbb;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+  }
+
+  .footer-left,
+  .footer-right {
+    width: 100%;
+    align-items: flex-start;
+    text-align: start;
+   
+  }
+  
+
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+}
