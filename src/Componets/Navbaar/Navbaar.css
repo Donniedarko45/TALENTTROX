@@ -21,7 +21,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 5%;
+  /* padding: 0.7rem; */
   background: linear-gradient(to right, rgba(104, 120, 225, 1), rgba(116, 82, 172, 1));
 
   color: var(--text-color);
@@ -32,7 +32,7 @@
 /* --- Logo Section --- */
 .navbar-logo {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .logo {
@@ -46,7 +46,7 @@
   background-color: transparent;
   color: var(--text-color);
   padding: 0.75rem 1.5rem;
-  font-size: 1rem;
+  font-size: 0.8rem;
   text-decoration: none;
   font-weight: 500;
   border-radius: 50px;
@@ -74,7 +74,7 @@
   .navbar-container {
    
     gap: 1rem;
-    padding: 1.5rem;
+    padding: 1.5rem 1.25rem 1.25rem 0;
   }
 
   .logo {
@@ -82,7 +82,7 @@
   }
   
   .navbar-cta-button {
-    width: 100%;
+    /* width: 100%; */
     justify-content: center;
   }
 }
