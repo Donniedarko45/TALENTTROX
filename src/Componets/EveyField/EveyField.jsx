@@ -130,7 +130,7 @@ function EveryField() {
       </div>
       <div className="card-details-area">
         <h3>{field.title}</h3>
-        <p>{field.description}</p>
+        <p className="description-filed">{field.description}</p>
         <div className="company-info">
           <span>Company:</span>
           <div className="company-logos">
