@@ -1,35 +1,35 @@
 import React, { useState } from 'react';
 import './FAQ.css';
 
-// Data for the FAQ section
+// Data for the FAQ section, updated from the image
 const faqData = [
   {
     question: 'What industries and roles do you specialize in?',
-    answer: 'We specialize in a wide range of industries including technology, finance, healthcare, marketing, and creative sectors. Our expertise covers roles from entry-level to executive leadership.'
+    answer: 'We specialize in hiring across diverse sectors including IT, Marketing, Finance, Operations, HR, and more — from entry-level to executive roles, for both startups and large enterprises.'
   },
   {
     question: 'How does the recruitment process work with Talentrox?',
-    answer: 'Our process begins with a detailed consultation to understand your needs. We then source, screen, and interview candidates, presenting you with a shortlist of the most qualified individuals. We manage the process end-to-end, from scheduling interviews to offer negotiation.'
+    answer: 'Our process is simple and effective: we understand your requirements, screen and shortlist suitable candidates, coordinate interviews, and support with offer rollout and onboarding — ensuring the right fit, fast.'
   },
   {
     question: 'Do you offer services for both companies and job seekers?',
-    answer: 'Yes, absolutely. We partner with companies to fill their open positions and also work closely with job seekers to help them find their dream roles, offering services like resume building and interview coaching.'
+    answer: "Yes. We offer services for both companies and job seekers — whether they're looking for full-time roles, internships, freelancing, or career transitions."
   },
   {
     question: 'What is your candidate replacement policy?',
-    answer: 'We offer a candidate replacement guarantee. If a candidate placed by us leaves within a specified period (typically 90 days), we will find a replacement at no additional cost.'
+    answer: "We offer a free candidate replacement within 30-90 days (depending on the agreement) if the hired candidate doesn't meet expectations or exits early."
   },
   {
     question: 'How long does it take to fill a position?',
-    answer: 'The timeline can vary depending on the role\'s complexity and market conditions. On average, we aim to present a shortlist of candidates within 1-2 weeks and fill the position within 4-6 weeks.'
+    answer: 'On average, we share quality candidate profiles within 3-7 working days. Most roles are closed within 2-3 weeks, depending on complexity and urgency.'
   },
   {
     question: 'What makes Talentrox different from other recruitment agencies?',
-    answer: 'Our key differentiators are our deep industry specialization, our personalized approach, and our commitment to building long-term partnerships. We focus on cultural fit as much as on skills and experience.'
+    answer: 'We combine speed with accuracy. Our 5,000+ pre-vetted candidate pool, university collaborations, real-time assessments, and dedicated recruiters ensure fast, reliable, and tailored hiring solutions.'
   },
   {
     question: 'How do you ensure the quality of candidates — whether freshers or experienced?',
-    answer: 'We employ a rigorous multi-stage screening process that includes technical assessments, behavioral interviews, and thorough reference checks to ensure we present only high-caliber candidates.'
+    answer: 'For freshers, we assess academic background, communication, aptitude, and project work. For experienced professionals, we verify experience, run technical or functional evaluations, and assess leadership potential. For campus recruitment, we work directly with top institutions to pre-screen high-potential students.'
   }
 ];
 

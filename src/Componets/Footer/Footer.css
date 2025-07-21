@@ -3,7 +3,7 @@
   background-color: #0E1245;
   color: #ffffff;
   padding: 50px 5%;
-  font-family: Arial, sans-serif;
+  
 }
 
 /* Flex container for the main content (logo/description and social links) */
@@ -112,4 +112,8 @@
   .social-icons {
     justify-content: flex-start;
   }
+}
+.logo-footer{
+  position: relative;
+  right: 22px;
 }
