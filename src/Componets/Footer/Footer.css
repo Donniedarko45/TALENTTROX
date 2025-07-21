@@ -70,7 +70,7 @@
 
 .social-icons a:hover {
   color: #a9c1ff;
-  transform: scale(1.1);
+  transform: translateY(-3px) scale(1.1);
 }
 
 /* The horizontal line divider */

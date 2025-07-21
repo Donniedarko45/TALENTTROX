@@ -120,8 +120,10 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
-  margin-top: 1rem;
+  margin: 1rem auto 0; /* top auto bottom */
+  display: block; /* required for margin auto to work */
 }
+
 
 .touchForm__button:hover {
   background-color: #b0b0be;
