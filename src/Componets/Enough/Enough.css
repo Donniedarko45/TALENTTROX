@@ -9,11 +9,13 @@
  
   overflow: hidden;
   text-align: center;
+  
 }
 
 /* Text content styling */
 .enough-content {
   max-width: 1200px;
+  margin-top: 50px;
 }
 
 .enough-content h1 {
