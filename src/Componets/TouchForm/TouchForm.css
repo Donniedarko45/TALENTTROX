@@ -16,7 +16,8 @@
 .touchForm__container {
   max-width: 650px;
   width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin-top: 100px;
   padding: 2.5rem;
   background-color: #8c8c9e; /* Muted purple-gray background */
   border-radius: 16px;
