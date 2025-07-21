@@ -18,7 +18,7 @@ function Home() {
       <Opportunities />
       <TrustCard />
       <FAQ />
-      <Career />/
+      <Career />
     </>
   );
 }

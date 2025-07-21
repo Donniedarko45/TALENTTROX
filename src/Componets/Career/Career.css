@@ -1,4 +1,4 @@
-/* Main container for the career section */
+
 .career-container {
   display: flex;
   justify-content: center;
@@ -8,9 +8,9 @@
   padding: 60px 20px;
   background: linear-gradient(135deg, #6a5af9, #d667cd);
   color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  position: relative; /* Needed for positioning the decorative shapes */
-  overflow: hidden; /* Hides parts of shapes that go outside the container */
+ 
+  position: relative;
+  overflow: hidden; 
 }
 
 /* Content wrapper */
