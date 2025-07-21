@@ -34,7 +34,7 @@
 
 /* Individual field card */
 .field-card {
-  border-radius: 16px;
+  /* border-radius: 16px; */
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   background-color: #ffffff;
