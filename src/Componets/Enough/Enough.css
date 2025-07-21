@@ -90,7 +90,7 @@
 }
 /* Phone mockup styling */
 .phone-mockup {
-  width: 320px;
+  width: 300px;
   background-color: #EEF0FF; /* Brighter white background */
   border-radius: 40px;
   box-shadow: 
@@ -221,33 +221,33 @@
 /* Card: 15,000+ Careers Launched */
 .card-careers {
   top: 110px;
-  left: -105px;
+  left: -85px;
   padding: 8px 16px;
-  gap: 16px;
-  min-width: 200px;
+  /* gap: 16px; */
+  width: 170px;
 }
 
 .card-careers .stat-icon {
   background-color: #fdf2e9;
   color: #c2410c;
   border-radius: 10px;
-  padding: 10px;
-  font-size: 2.8rem;
+  /* padding: 10px; */
+  font-size: 2.5rem;
 }
 
 .card-careers .stat-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  /* gap: 2px; */
   text-align: center;
 }
 
 .card-careers .stat-text strong {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .card-careers .stat-text span {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: #1e293b;
   line-height: 1.2;
@@ -256,7 +256,7 @@
 /* Card: 4.9/5 Candidate Satisfaction */
 .card-satisfaction {
   top: 80px; /* Moved down slightly to decrease height overlap */
-  right: -100px; /* Positioned at the edge of Sarah Chen card */
+  right: -60px; /* Positioned at the edge of Sarah Chen card */
   transform: scale(0.80);
   transform-origin: right center;
   min-width: 250px; /* Reduced width */
