@@ -22,7 +22,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
-  background: linear-gradient(100deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(to right, rgba(104, 120, 225, 1), rgba(116, 82, 172, 1));
+
   color: var(--text-color);
   box-shadow: 0 10px 30px var(--shadow-color);
   font-family: var(--font-family); /* Font family applied directly */
