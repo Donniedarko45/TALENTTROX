@@ -34,8 +34,8 @@
 
 /* Individual field card */
 .field-card {
-  /* border-radius: 16px; */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   background-color: #ffffff;
   overflow: hidden; /* Crucial for the max-height animation */
@@ -44,7 +44,8 @@
 
 .field-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background-color: #E9EBF3;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 /* The top area with the icon, always visible */
