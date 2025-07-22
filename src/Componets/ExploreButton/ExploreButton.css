@@ -2,7 +2,7 @@
 .explore-btn-pure {
   position: relative;
   overflow: hidden;
-  padding: 16px 32px;
+  /* padding: 16px 32px; */
   background-color: #fff; /* White background - default secondary style */
   color: #3b4b8a; 
   border: none; /* No border */
@@ -19,6 +19,7 @@
   transition: box-shadow 0.3s ease-out;
   /* Prevent text shift during animation */
   min-width: 140px;
+  height: 50px;
   text-align: center;
 }
 
