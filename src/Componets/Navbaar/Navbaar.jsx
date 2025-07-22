@@ -17,7 +17,8 @@ function Navbaar() {
   };
 
   return (
-    <nav className="navbar-container">
+    <div className='navbaar' >
+      <nav className="navbar-container">
       <div className="navbar-logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
         <img src={Main} alt="Logo" className="logo" />
       </div>
@@ -25,6 +26,7 @@ function Navbaar() {
         Get in Touch <FaArrowRight />
       </button>
     </nav>
+    </div>
   );
 }
 

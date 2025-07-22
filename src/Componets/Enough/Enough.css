@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 100px 5%;
+  /* padding: 100px 5%; */
   background-color: #f8faff;
  
   overflow: hidden;
@@ -14,12 +14,12 @@
 
 /* Text content styling */
 .enough-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin-top: 100px;
 }
 
 .enough-content h1 {
-  font-size: 3.8rem;
+  font-size: 50px;
   font-weight: 800;
   color: #152147;
   line-height: 1.2;
@@ -29,7 +29,7 @@
 .enough-content p {
   font-size: 1.2rem;
   color: #5a647e;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 15px auto;
   max-width: 600px;
 }
 
@@ -87,8 +87,9 @@
   align-items: center;
   width: 100%;
   max-width: 450px; /* Adjusted to give cards breathing room */
-  height: 600px;     /* Adjusted for vertical space */
-  margin-top: 40px;
+  height: 450px;
+  
+
 }
 /* Phone mockup styling */
 .phone-mockup {
@@ -111,7 +112,7 @@
   padding: 25px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   z-index: 1;
 }
 
@@ -164,9 +165,9 @@
 .phone-footer {
   background-color: #ffffff;
   border-radius: 40px;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
-  margin-top: 15px;
+  margin-top: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
   border: none;
   outline: none;
@@ -223,7 +224,7 @@
 /* Card: 15,000+ Careers Launched */
 .card-careers {
   top: 110px;
-  left: -85px;
+  left: -60px;
   padding: 8px 16px;
   /* gap: 16px; */
   width: 170px;
@@ -298,7 +299,7 @@
 /* --- Responsive Adjustments for Mobile --- */
 @media (max-width: 768px) {
   .enough-section {
-    padding-top: 60px;
+    
     padding-bottom: 60px;
   }
   .enough-content h1 {

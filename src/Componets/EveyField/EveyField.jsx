@@ -125,6 +125,7 @@ function EveryField() {
         <img
           src={field.image}
           alt={field.alt}
+          className="card-image"
           onError={(e) => { e.target.onerror = null; e.target.src='https://placehold.co/100x100/e9eaf2/7d7f82?text=Icon'; }}
         />
       </div>

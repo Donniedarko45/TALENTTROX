@@ -55,11 +55,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: 40px 40px;
   box-sizing: border-box;
+  
   background-color: #e9eaf2;
 }
-
 
 
 /* The bottom details panel that is revealed */
